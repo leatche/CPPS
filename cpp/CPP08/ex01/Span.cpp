@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 16:01:45 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/11 19:03:31 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2025/12/23 20:23:52 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Span& Span::operator=(const Span &other)
 
 void Span::addNumber(unsigned int add)
 {
-	if (_currentN == _N)
+	if (_currentN >= _N)
 		throw std::length_error("Span is already full");
 	_tab.push_back(add);
 	_currentN++;
@@ -46,29 +46,46 @@ void Span::addNumber(unsigned int add)
 
 unsigned int Span::longestSpan()
 {
+	if (_tab.empty() || _tab.size() < 2)
+		std::out_of_range("you can't find the longest span. There isn't enough number store");
+	
 	std::sort(_tab.begin(), _tab.end());
-	return ((_tab.begin() + (_N - 1)) - _tab.begin());
+	return (*(_tab.end() - 1) - *(_tab.begin()));
 }
 
 unsigned int Span::shortestSpan()
 {
+	if (_tab.empty() || _tab.size() < 2)
+		std::out_of_range("you can't find the shortest span. There isn't enough number store");
+	
 	std::sort(_tab.begin(), _tab.end());
 
 	unsigned int shortest = std::numeric_limits<unsigned int>::max();
-	
-	std::vector<unsigned int>::iterator it = _tab.begin();
-	std::vector<unsigned int>::iterator end = _tab.end();
-	int i = -1;
 
-	/// utiliser iterateur mais pas des i // 
-	while (end != it && (it + 2))
+	for (std::vector<unsigned int>::iterator it = _tab.begin(); it + 1 !=  _tab.end(); ++it)
 	{
-		++it;
 		unsigned int diff_value;
 
-		diff_value = (it + 1) - it;
+		diff_value = *(it + 1) - *it;
 		if (diff_value < shortest)
 			shortest = diff_value;
 	}
 	return (shortest);
+}
+
+void	Span::printVector()
+{
+	std::sort(_tab.begin(), _tab.end());
+	for (std::vector<unsigned int>::iterator it = _tab.begin(); it != _tab.end(); ++it)
+			std::cout << *it << std::endl;
+}
+
+void Span::addNumbers(std::vector<unsigned int>::iterator begin, std::vector<unsigned int>::iterator end)
+{
+	unsigned int distance = std::distance(begin, end);
+
+	if (_tab.size() + distance > _N)
+		throw std::length_error("Span is already full");
+	_tab.insert(_tab.end(), begin, end);
+
 }

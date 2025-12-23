@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/29 17:39:08 by tcherepoff        #+#    #+#              #
-#    Updated: 2025/12/22 12:11:28 by tcherepoff       ###   ########.fr        #
+#    Created: 2025/12/22 12:11:10 by tcherepoff        #+#    #+#              #
+#    Updated: 2025/12/22 12:11:48 by tcherepoff       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Span
+NAME	=	Mutated
 
 CC		=	c++
 
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp Span.cpp
+SRCS	=	main.cpp
 OBJ		=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
