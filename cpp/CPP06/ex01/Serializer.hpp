@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:39:30 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/09 17:18:36 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/03 18:33:12 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@
 # include <cctype>
 
 struct Data
-{ 
+{
 	int value;
+	int value2;
 };
 
 class Serializer

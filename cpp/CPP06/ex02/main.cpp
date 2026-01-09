@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 00:07:02 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/09 18:47:52 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/03 18:48:55 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
     Base *g = generate();
     Base *h = generate();
 
+    std::cout << std::endl;
 
     identify(a);
     identify(*a);
