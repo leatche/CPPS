@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 18:36:36 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/10 13:07:10 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/10 13:10:48 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
 #define RESET		"\033[0m"
 #define BRED		"\033[1;31m"
@@ -34,24 +34,18 @@
 #include <string>
 #include <cctype>
 #include <algorithm>
-#include <map>
+#include <stack>
 
-class Bitcoin
+class RPN
 {
 	private :
-		std::map<std::string, double> _database;
+		std::stack<int> _stack;
 	public :
-		Bitcoin();
-		~Bitcoin();
-		Bitcoin(Bitcoin &toCopy);
-		Bitcoin &operator=(const Bitcoin &toCopy);
-		void transfer_data_to_map();
-		void compare_input_to_map(char *av);
+		RPN();
+		~RPN();
+		RPN(RPN &toCopy);
+		RPN &operator=(RPN &toCopy);
 
-		bool good_date_synthax(std::string date);
-		bool good_price_synthax(std::string &s, double &price);
-
-		void print_amount_bitcoin(double &price, std::string &date);
-		void trim(std::string &date);
+		int calculator_RPN(std::string calcul);
 };
 #endif

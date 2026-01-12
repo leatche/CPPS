@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 11:01:05 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/11 22:37:16 by tcherepoff       ###   ########.fr       */
+/*   Created: 2026/01/04 18:36:21 by tcherepoff        #+#    #+#             */
+/*   Updated: 2026/01/10 13:21:22 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#include "RPN.hpp"
 
-#include <iostream>
-#include <cstddef>
-
-template <typename T, typename F>
-
-void iter(const T *array, const size_t size, F function)
+int	RPN::calculator_RPN(std::string c)
 {
-	size_t i = 0;
-	while (i < size)
+	for (int i = 0; i < c.length(); i++)
 	{
-		function(array[i]);
-		i++;
+		if (std::isspace(c[i]))
+			continue;
+		else if (std::isdigit(c[i]) && ((c[i] - 48) < 10))
+			_stack.push(c[i] - 48);
+		else if 
+
 	}
 }
 
-template <typename T, typename F>
 
-void iter(T *array, const size_t size, F function)
+RPN::RPN(RPN &toCopy)
 {
-	size_t i = 0;
-	while (i < size)
-	{
-		function(array[i]);
-		i++;
-	}
+	*this = toCopy;
 }
-#endif
+
+RPN &RPN::operator=(RPN &toCopy)
+{
+	_stack = toCopy._stack;
+	return (*this);
+}
+
+RPN::RPN()
+{
+}
+
+RPN::~RPN()
+{
+}

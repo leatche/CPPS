@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 16:01:45 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/23 20:23:52 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/04 17:30:52 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	Span::printVector()
 			std::cout << *it << std::endl;
 }
 
-void Span::addNumbers(std::vector<unsigned int>::iterator begin, std::vector<unsigned int>::iterator end)
+void Span::addNumber(std::vector<unsigned int>::iterator begin, std::vector<unsigned int>::iterator end)
 {
 	unsigned int distance = std::distance(begin, end);
 

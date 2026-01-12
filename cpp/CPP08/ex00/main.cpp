@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 15:29:13 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/11 16:50:05 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/04 17:30:31 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ int main()
 		std::cerr << e.what() << "5" << std::endl;
 	}
 	
-	
-
 return 0;
 }

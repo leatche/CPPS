@@ -6,11 +6,11 @@
 #    By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/23 11:00:50 by tcherepoff        #+#    #+#              #
-#    Updated: 2025/11/23 11:34:54 by tcherepoff       ###   ########.fr        #
+#    Updated: 2026/01/11 22:28:56 by tcherepoff       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Start
+NAME	=	Iter
 
 CC		=	c++
 

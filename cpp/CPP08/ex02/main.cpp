@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 12:11:06 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/26 11:37:55 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/07 13:47:04 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ int main()
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << BCYAN << "TOP METHOD : "  << RESET << "(the element at the top of the stack) = "<< mstack.top() << std::endl;
-	mstack.pop();
-	std::cout << BCYAN << "A POP HAS BEEN DONE :"  << RESET << " (removes the element at the top of the stack) = " << RESET << mstack.top() << std::endl;
-	std::cout <<  BGREEN << "The size is now : " << RESET << mstack.size() << std::endl;
+	std::cout <<  BGREEN << "The size is : " << RESET << mstack.size() << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);

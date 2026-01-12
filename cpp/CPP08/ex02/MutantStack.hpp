@@ -6,13 +6,12 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 12:10:52 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/26 11:32:17 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/04 18:40:20 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
-
 
 #define RESET		"\033[0m"
 #define BRED		"\033[1;31m"

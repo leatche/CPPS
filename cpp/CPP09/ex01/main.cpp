@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 11:01:05 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/11 22:37:16 by tcherepoff       ###   ########.fr       */
+/*   Created: 2026/01/04 18:36:39 by tcherepoff        #+#    #+#             */
+/*   Updated: 2026/01/10 13:12:41 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#include "RPN.hpp"
 
-#include <iostream>
-#include <cstddef>
-
-template <typename T, typename F>
-
-void iter(const T *array, const size_t size, F function)
+int main(int ac, char **av)
 {
-	size_t i = 0;
-	while (i < size)
+	if (ac != 2)
 	{
-		function(array[i]);
-		i++;
+		std::cerr << "Error: You're only allowed to put one argument !" << std::endl;
+		return 1;
+	}
+	
+	RPN a;
+
+	try
+	{
+		int result = a.calculator_RPN(av[1]);
+		std::cout << " The result is : " << BGREEN << result << RESET << std::endl;
+	}
+	catch(const std::runtime_error& e)
+	{
+		std::cerr << BRED << e.what() << RESET << std::endl;
 	}
 }
-
-template <typename T, typename F>
-
-void iter(T *array, const size_t size, F function)
-{
-	size_t i = 0;
-	while (i < size)
-	{
-		function(array[i]);
-		i++;
-	}
-}
-#endif

@@ -6,17 +6,17 @@
 #    By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/10 10:40:02 by tcherepoff        #+#    #+#              #
-#    Updated: 2026/01/10 10:40:40 by tcherepoff       ###   ########.fr        #
+#    Updated: 2026/01/10 12:33:57 by tcherepoff       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	btc
+NAME	=	RPN
 
 CC		=	c++
 
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp BitcoinExchange.cpp
+SRCS	=	main.cpp RPN.cpp
 OBJ		=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
