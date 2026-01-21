@@ -5,35 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 15:29:13 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/20 16:19:35 by tcherepoff       ###   ########.fr       */
+/*   Created: 2026/01/14 12:01:36 by tcherepoff        #+#    #+#             */
+/*   Updated: 2026/01/20 18:45:06 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "PmergeMe.hpp"
 
-int main()
+int main (int ac, char **av)
 {
+	Ford_Johnson a;
+
 	try
 	{
-		std::cout << "REGULAR VECTOR TEST :" << std::endl;
-		std::vector<int> v;
-		v.push_back(10);
-		v.push_back(20);
-		v.push_back(30);
+		size_t size = a.pars_av(ac, av);
+		int result_deque = a.deque_algo();
+		int result_vector = a.vector_algo();
+		a.print_deque();
+		std::cout << "Time to process a range of " << size << " elements with std::deque : " << result_deque << "us" << std::endl;
+		std::cout << "Time to process a range of " << size << " elements with std::vector : " << result_vector << "us" << std::endl;
 
-		::easyfind(v, 20);
-
-		std::cout << std::endl;
-		std::cout << "CONST VECTOR TEST :" << std::endl;
-		const std::vector <int> m(3, 42);
-		::easyfind(m, 42);
-		::easyfind(m, 5);
 	}
-	catch(const std::out_of_range& e)
+	catch(const std::invalid_argument& e)
 	{
-		std::cerr << e.what() << RESET << std::endl;
+		std::cerr << BRED << e.what() << RESET << std::endl;
 	}
-	
-return 0;
 }

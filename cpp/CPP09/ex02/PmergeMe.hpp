@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/04 18:36:36 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/13 12:15:43 by tcherepoff       ###   ########.fr       */
+/*   Created: 2026/01/14 12:01:24 by tcherepoff        #+#    #+#             */
+/*   Updated: 2026/01/20 18:44:23 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-#define RPN_HPP
+#ifndef PMERGEME_HPP
+#define PMERGEME_HPP
 
 #define RESET		"\033[0m"
 #define BRED		"\033[1;31m"
@@ -27,26 +27,52 @@
 
 #include <iostream>
 #include <cstddef>
-#include <stack>
-#include <limits>
 #include <fstream>
 #include <stdexcept>
 #include <string>
 #include <cstring>
+#include <sys/time.h>
 #include <cctype>
 #include <algorithm>
-#include <stack>
+#include <vector>
+#include <deque>
 
-class RPN
+class Ford_Johnson
 {
 	private :
-		std::stack<int> _stack;
-	public :
-		RPN();
-		~RPN();
-		RPN(RPN &toCopy);
-		RPN &operator=(RPN &toCopy);
+		std::vector<int> _input;
+		std::vector<int> _vector;
+		std::deque<int> _deque;
 
-		int calculator_RPN(std::string calcul);
+		std::vector< std::pair<int, int> > _pair;
+		std::deque< std::pair<int, int> > _pairs;
+
+		double _time_deque;
+		double _time_vector;
+		
+	public :
+		Ford_Johnson();
+		~Ford_Johnson();
+		Ford_Johnson(Ford_Johnson &toCopy);
+		Ford_Johnson &operator=(Ford_Johnson &toCopy);
+
+		size_t pars_av(int ac, char **av);
+
+		double deque_algo();
+		void do_pairs();
+		void insert_bigs();
+		void insert_smalls();
+		void insert_odd(int old_value);
+
+		double vector_algo();
+		void do_pair();
+		void insert_big();
+		void insert_small();
+		void insert_oddd(int odd_value);
+
+		void print_deque();
+		long long get_time_us();
+		std::vector<size_t> build_jacobsthal(size_t size);
 };
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 12:10:52 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/04 18:40:20 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/20 16:47:31 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 #include <iostream>
 #include <cstddef>
 #include <stack>
-#include <limits>
 #include <stdexcept>
 #include <algorithm>
 
@@ -36,12 +35,12 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		typedef typename std::stack<T>::container_type::iterator iterators;
-		iterators begin()
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin()
 		{
 			return (this->c.begin());
 		}
-		iterators end()
+		iterator end()
 		{
 			return (this->c.end());
 		}
@@ -74,6 +73,14 @@ class MutantStack : public std::stack<T>
 		const_reverse_iterator rend() const
 		{ 
 			return (this->c.rend()); 
+		}
+		MutantStack() : std::stack<T>() {}
+		~MutantStack() {}
+		MutantStack(const MutantStack& other) : std::stack<T>(other) {}
+		MutantStack& operator=(const MutantStack& other)
+		{
+			std::stack<T>::operator=(other);
+			return (*this);
 		}
 };
 

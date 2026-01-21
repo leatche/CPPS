@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 17:39:00 by tcherepoff        #+#    #+#             */
-/*   Updated: 2025/12/23 20:30:20 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/20 16:34:57 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int main()
 	{
 		//////////////////// manual version ////////////////////////////////
 
-		std::cout << BGREEN << "manual version ; size 5" << RESET << std::endl;
+		std::cout << BGREEN << "manual version : size 5" << RESET << std::endl;
 		Span tab1(5);
 
-		tab1.addNumber(8);
-		tab1.addNumber(3);
-		tab1.addNumber(55);
-		tab1.addNumber(1);
-		tab1.addNumber(108);
+		tab1.addNumbers(8);
+		tab1.addNumbers(3);
+		tab1.addNumbers(55);
+		tab1.addNumbers(1);
+		tab1.addNumbers(108);
 
 		tab1.printVector();
 
@@ -39,11 +39,11 @@ int main()
 		//////////////////// rand on 99 version ////////////////////////////////
 
 		std::cout << std::endl;
-		std::cout << BGREEN << "rand version ; size 99" << RESET << std::endl;
+		std::cout << BGREEN << "rand version : size 99" << RESET << std::endl;
 		Span tab2(99);
 
 		for (int i = 0; i < 99; ++i)
-			tab2.addNumber(static_cast<unsigned int>(rand() % 100000));
+			tab2.addNumbers(static_cast<unsigned int>(rand() % 100000));
 
 		tab2.printVector();
 		std::cout << BCYAN << "the longest span in the tab is ";
@@ -54,7 +54,7 @@ int main()
 		//////////////////// rand on 20000 version ////////////////////////////////
 
 		std::cout << std::endl;
-		std::cout << BGREEN << "addNumbers version ; size 20000" << RESET << std::endl;
+		std::cout << BGREEN << "addNumberss version : size 20000" << RESET << std::endl;
 		Span tab3(20000);
 
 		std::vector<unsigned int> tmp;
@@ -68,11 +68,11 @@ int main()
 		std::cout << BCYAN << "and the shortest is ";
 		std::cout << BYELLOW << tab3.shortestSpan() << RESET << std::endl;
 
-		tab3.addNumber(8);
+		tab3.addNumbers(8);
 	}
 	catch(const std::length_error& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << BRED << e.what() << RESET << std::endl;
 	}
 	
 }

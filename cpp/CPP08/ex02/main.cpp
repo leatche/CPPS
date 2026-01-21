@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 12:11:06 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/07 13:47:04 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/20 16:38:32 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int main()
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
-	MutantStack<int>::iterators it = mstack.begin();
-	MutantStack<int>::iterators ite = mstack.end();
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
 	std::cout << BYELLOW << "The final stack : " << RESET << std::endl;
@@ -38,10 +38,10 @@ int main()
 	}
 	std::stack<int> s(mstack);
 	
-	//////////////////////// CONSTANT AND REVERSE ITERATORS ////////////////////////
+	//////////////////////// CONSTANT AND REVERSE iterator ////////////////////////
 
 	std::cout << std::endl;
-	std::cout << BRED << "CONSTANT AND REVERSE ITERATORS" << RESET << std::endl << std::endl;
+	std::cout << BRED << "CONSTANT AND REVERSE iterator" << RESET << std::endl << std::endl;
 
 	const MutantStack<int> constStack(mstack);
 
@@ -55,10 +55,10 @@ int main()
 		++cit;
 	}
 
-	//////////////////////// REVERSE ITERATORS ////////////////////////
+	//////////////////////// REVERSE iterator ////////////////////////
 
 	std::cout << std::endl;
-	std::cout << BRED << "REVERSE ITERATORS" << RESET << std::endl << std::endl;
+	std::cout << BRED << "REVERSE iterator" << RESET << std::endl << std::endl;
 
 	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
 	MutantStack<int>::reverse_iterator rite = mstack.rend();

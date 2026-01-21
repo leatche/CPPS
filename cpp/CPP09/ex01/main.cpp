@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 18:36:39 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/10 13:12:41 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/13 12:53:50 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int main(int ac, char **av)
 	try
 	{
 		int result = a.calculator_RPN(av[1]);
-		std::cout << " The result is : " << BGREEN << result << RESET << std::endl;
+		std::cout << " The result of the operation ' " << av[1] << " ' is : " << std::endl << BGREEN << result << RESET << " ! " << std::endl;
 	}
-	catch(const std::runtime_error& e)
+	catch(const std::invalid_argument& e)
 	{
 		std::cerr << BRED << e.what() << RESET << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 11:01:05 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/11 23:06:21 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/01/19 23:06:12 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ class Array
 			return _value[index];
 		}
 		
-		const T &operator[](size_t index) const{
+		const T &operator[](size_t index) const {
 			if (index >= _size)
-				throw::std::out_of_range("Becareful : Index is higher or equal to the size");
+				throw::std::out_of_range("Be careful : Index is higher or equal to the size");
 			return (_value[index]);
 		};
 		~Array() {delete[] _value;};
