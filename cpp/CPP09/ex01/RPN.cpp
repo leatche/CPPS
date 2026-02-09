@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 18:36:21 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/19 23:06:30 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/02/09 14:14:43 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,12 @@ int	RPN::calculator_RPN(std::string c)
 	return (_stack.top());
 }
 
-
-RPN::RPN(RPN &toCopy)
+RPN::RPN(const RPN &toCopy)
 {
 	*this = toCopy;
 }
 
-RPN &RPN::operator=(RPN &toCopy)
+RPN &RPN::operator=( const RPN &toCopy)
 {
 	_stack = toCopy._stack;
 	return (*this);

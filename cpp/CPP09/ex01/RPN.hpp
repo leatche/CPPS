@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 18:36:36 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/13 12:15:43 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/02/09 14:13:51 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ class RPN
 	public :
 		RPN();
 		~RPN();
-		RPN(RPN &toCopy);
-		RPN &operator=(RPN &toCopy);
+		RPN(const RPN &toCopy);
+		RPN &operator=(const RPN &toCopy);
+
 
 		int calculator_RPN(std::string calcul);
 };

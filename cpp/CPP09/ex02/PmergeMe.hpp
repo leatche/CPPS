@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:01:24 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/20 18:44:23 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/02/09 14:27:31 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ class Ford_Johnson
 		void insert_oddd(int odd_value);
 
 		void print_deque();
+		void print_vector();
 		long long get_time_us();
 		std::vector<size_t> build_jacobsthal(size_t size);
 };

@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:17:34 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/20 18:52:08 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/02/09 14:28:04 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,7 +261,7 @@ std::vector<size_t> Ford_Johnson::build_jacobsthal(size_t size)
 	{
 		jacob.push_back(j1);
 
-		size_t next = j1 + 2 * j0;
+		size_t next = j0 + 2 * j1;
 		j0 = j1;
 		j1 = next;
 	}
@@ -283,3 +283,12 @@ void Ford_Johnson::print_deque()
 		std::cout << _deque[i] << " ";
 	std::cout << std::endl;
 }
+
+void Ford_Johnson::print_vector()
+{
+	std::cout << "After : ";
+	for (size_t i = 0; i < _vector.size(); ++i)
+		std::cout << _vector[i] << " ";
+	std::cout << std::endl;
+}
+

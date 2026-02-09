@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 18:36:36 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/10 13:07:10 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/02/09 13:49:55 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Bitcoin
 	public :
 		Bitcoin();
 		~Bitcoin();
-		Bitcoin(Bitcoin &toCopy);
+		Bitcoin(const Bitcoin &toCopy);
 		Bitcoin &operator=(const Bitcoin &toCopy);
 		void transfer_data_to_map();
 		void compare_input_to_map(char *av);

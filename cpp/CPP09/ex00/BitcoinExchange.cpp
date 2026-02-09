@@ -6,7 +6,7 @@
 /*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 18:36:21 by tcherepoff        #+#    #+#             */
-/*   Updated: 2026/01/10 13:07:45 by tcherepoff       ###   ########.fr       */
+/*   Updated: 2026/02/09 14:06:01 by tcherepoff       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,30 +64,47 @@ bool Bitcoin::good_date_synthax(std::string date)
 		std::cerr << BRED << "Error: bad input => too long values" << RESET << std::endl;
 		return (false);
 	}
+
+
 	size_t year_size = date.find('-');
+	int y = std::atoi(date.substr(0, 4).c_str());
 	if (year_size != 4)
 	{
-		std::cerr << BRED << "Error: bad input => wrong year" << RESET << std::endl;
+		std::cerr << BRED << "Error: bad input => wrong year : " << date << RESET << std::endl;
 		return (false);
 	}
+
+
 	size_t month_size = date.find('-', year_size + 1);
-	std::string month = date.substr(year_size + 1, month_size);
+	std::string month = date.substr(year_size + 1, month_size - (year_size + 1));
+	int m = std::atoi(month.c_str());
 	if (month_size == std::string::npos)
 	{
-		std::cerr << BRED << "Error: bad input => no day is given" << RESET << std::endl;
+		std::cerr << BRED << "Error: bad input => no day is given : " << date << RESET << std::endl;
 		return (false);
 	}
-	if (std::atoi(month.c_str()) < 1 || std::atoi(month.c_str()) > 12)
+	if (m < 1 || m > 12)
 	{
-		std::cerr << BRED << "Error: bad input => this month doesn't exist " << RESET << std::endl;
+		std::cerr << BRED << "Error: bad input => this month doesn't exist : " << date << RESET << std::endl;
 		return (false);
 	}
+
+
 	std::string day = date.substr(month_size + 1);
-	if (std::atoi(day.c_str()) < 1 || std::atoi(day.c_str()) > 31)
+	int d = std::atoi(day.c_str());
+	if (d < 1 || d > 31)
 	{
-		std::cerr << BRED << "Error: bad input => this day doesn't exist " << RESET << std::endl;
+		std::cerr << BRED << "Error: bad input => this day doesn't exist : " << date << RESET << std::endl;
 		return (false);
 	}
+
+	
+	if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30)
+	return (std::cerr << BRED << "Error: bad input => this day doesn't exist : " << date << RESET << std::endl, false);
+
+	if (m == 2 && (d > 29 || (d == 29 && y % 4 != 0)))
+	return (std::cerr << BRED << "Error: bad input => this day doesn't exist : " << date << RESET << std::endl, false);
+
 	return (true);
 }
 
@@ -153,7 +170,7 @@ Bitcoin::Bitcoin()
 	
 }
 
-Bitcoin::Bitcoin(Bitcoin &toCopy)
+Bitcoin::Bitcoin(const Bitcoin &toCopy)
 {
 	*this = toCopy;
 }
